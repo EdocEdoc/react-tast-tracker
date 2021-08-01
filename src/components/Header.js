@@ -2,15 +2,11 @@ import PropTypes from 'prop-types'
 import Button from './Button'
 
 // destructor object props using {}
-const Header = ({ title }) => {
-    const onClick = () => {
-        console.log('clicked')
-    }
-
+const Header = ({ title, onAdd, buttonState }) => {
     return (
         <header className='header'>
             <h1>{title}</h1>
-            <Button color='green' text='Add' onClick={onClick}/>
+            <Button color={!buttonState ? 'green' : 'red'} text={!buttonState ? 'Add' : 'Close'} onClick={onAdd}/>
         </header>
     )
 }
